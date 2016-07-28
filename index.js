@@ -12,7 +12,7 @@ app.enable('trust proxy');
 
 app.get("/", function(req, res){
 	userInfo.ipaddress = req.ip;
-	user.Info.language = req.headers["accept-language"];
+	user.Info.language = req.acceptsLanguages();
 	console.log(req.ip);
 	res.send(JSON.stringify(userInfo));
 })
