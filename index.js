@@ -3,13 +3,14 @@ var app = express();
 
 
 var userInfo = {
-	"ipaddress": null,
-	"language": null,
-	"software": null
+	ipaddress: null,
+	language: null,
+	software: null
 }
 
 
 app.get("/", function(req, res){
+	userInfo.ipaddress = req.ip;
 	res.send(JSON.stringify(userInfo));
 })
 
