@@ -15,7 +15,7 @@ app.use(useragent.express());
 app.get("/", function(req, res){
 	userInfo.ipaddress = req.ip;
 	userInfo.language = req.acceptsLanguages()[0];
-	userInfo.software = req.useragent.os;
+	userInfo.OS = req.useragent.os;
 	console.log(req.ip);
 	res.send(JSON.stringify(userInfo));
 })
