@@ -6,7 +6,7 @@ var useragent = require('express-useragent');
 var userInfo = {
 	ipaddress: null,
 	language: null,
-	software: null
+	OS: null
 }
 
 app.enable('trust proxy');
