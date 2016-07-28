@@ -8,9 +8,11 @@ var userInfo = {
 	software: null
 }
 
+app.enable('trust proxy');
 
 app.get("/", function(req, res){
 	userInfo.ipaddress = req.ip;
+	console.log(req.ip);
 	res.send(JSON.stringify(userInfo));
 })
 
