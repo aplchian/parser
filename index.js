@@ -13,6 +13,7 @@ app.enable('trust proxy');
 app.get("/", function(req, res){
 	userInfo.ipaddress = req.ip;
 	userInfo.language = req.acceptsLanguages()[0];
+	userInfo.software = req.headers['user-agent'];
 	console.log(req.ip);
 	res.send(JSON.stringify(userInfo));
 })
